@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<h3>Registrants</h3>
+<table class="table table-striped mt-3">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Sport</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for name in registrants %}
+      <tr>
+        <td>{{ name }}</td>
+        <td>
+          <a href="/registrants/{{ registrants[name] }}">{{ registrants[name] }}</a>
+        </td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

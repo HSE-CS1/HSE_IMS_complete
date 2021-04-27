@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<h3>{{ sport }} Registrants</h3>
+<ul>
+  {% for name, reg_sport in registrants | dictsort %}
+    {% if reg_sport == sport %}
+      <li>{{ name | title }}</li>
+    {% endif %}
+  {% endfor %}
+</ul>
+{% endblock %}
